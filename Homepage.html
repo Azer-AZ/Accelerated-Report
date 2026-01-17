@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links: Home Page</title>
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+
+    <style>
+         *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+        }
+    
+        body {
+      font-family: "Sedgwick Ave Display", cursive;
+      font-weight: 400;
+      font-style: normal;
+      background-color: #C1E1C1; 
+      color: black; 
+        }
+
+        header {
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #c1e1c1;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+        }
+
+        .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      }
+        
+        nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+        }
+
+        nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+      color: #007BFF;
+    }
+
+    .language-switch {
+      border-left: 1px solid #ccc;
+      padding-left: 20px;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    .language-switch a {
+      margin: 0 5px;
+      color: #666;
+      text-decoration: none;
+    }
+
+    .language-switch a:hover {
+      color: #000;
+    }
+
+     footer {
+      background-color: #222;
+      color: #eee;
+      padding: 30px 20px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-links {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      color: #bbb;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      font-size: 13px;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .language-switch {
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
+      .footer-links a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #333;
+            margin: 20px 0;
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: center;
+            gap: 150px;
+            margin-top: 40px;
+        }
+
+        .menu-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #225f08;
+            border-radius: 15px;
+            min-width: 200px;
+            max-width: 250px;
+            height: 140px;
+            padding: 10px;
+            font-size: 26px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .menu-box:hover {
+            background-color: #1a6b1a;
+            transform: scale(1.05);
+        }
+
+        #box_GS {
+            display: block;
+            padding: 20px;
+            background-color: #71b571;
+            color: black;
+            border: 3px solid transparent;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 28px;
+            margin: 40px auto;
+            text-align: center;
+            width: 200px;
+            transition: 0.3s ease;
+        }
+
+        #box_GS:hover {
+            background-color: #73c373;
+            transform: scale(1.08);
+            border-color: gold;
+        }
+
+
+        .updatedheader img {
+            height: 30px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+        <header>
+            <div class="updatedheader">
+                <a href="https://links-seg2900.github.io/html-pages/Homepage.html">
+                    <img src="https://raw.githubusercontent.com/Links-SEG2900/Links-SEG2900.github.io/refs/heads/main/html-pages/images/logoLinksk.png">
+                </a>
+            </div>
+        
+            <nav>
+                <a href="https://links-seg2900.github.io/html-pages/Features_page.html">Features</a>
+                <a href="https://links-seg2900.github.io/html-pages/Pricing_page._version2_.html">Pricing</a>
+                <a href="https://links-seg2900.github.io/html-pages/teampage.html">Meet Our Team</a>
+                <a href="#" id="fr-btn">FR</a> | <a href="#" id="en-btn">EN</a>
+            </nav>
+        </header>
+        
+        <main>
+            <br><br>
+        
+            <a href="https://links-seg2900.github.io/html-pages/Homepage.html">
+                <img src="https://raw.githubusercontent.com/Links-SEG2900/Links-SEG2900.github.io/refs/heads/main/html-pages/images/logoLinksk.png"
+                style="display:block; margin:auto; width:700px; height:300px;">
+            </a>
+        
+            <hr>
+        
+            <div class="box-container">
+                <a class="menu-box" href="https://links-seg2900.github.io/html-pages/Features_page.html">Features</a>
+                <a class="menu-box" href="https://links-seg2900.github.io/html-pages/Pricing_page._version2_.html">Pricing</a>
+                <a class="menu-box" href="https://links-seg2900.github.io/html-pages/teampage.html">Meet Our Team</a>
+            </div>
+        
+            <a href="https://links-seg2900.github.io/html-pages/log_in_page.html" id="box_GS">Get Started</a>
+        </main>
+        
+        <footer>
+        <div class="footer-bottom", id="footertext">
+        &copy; Links 2025. All Rights Reserved.
+        </div>
+        </footer>
+        <script>
+            const translations = {
+                en: {
+                    features: "Features",
+                    pricing: "Pricing",
+                    about: "Meet Our Team",
+                    box1: "Features",
+                    box2: "Pricing",
+                    box3: "Meet Our Team",
+                    getStarted: "Get Started",
+                    footerBottom: "© 2025 Links. All Rights Reserved."
+                },
+                fr: {
+                    features: "Caractéristiques",
+                    pricing: "Abonnements",
+                    about: "À propos de nous",
+                    box1: "Caractéristiques",
+                    box2: "Abonnements",
+                    box3: "À propos de nous",
+                    getStarted: "Commencer",
+                    footerBottom: "© 2025 Links. Tous droits réservés."
+                }
+            };
+            document.getElementById("fr-btn").onclick = () => translate("fr");
+            document.getElementById("en-btn").onclick = () => translate("en");
+            function translate(lang) {
+                const t = translations[lang];
+                document.querySelector("nav a:nth-child(1)").textContent = t.features;
+                document.querySelector("nav a:nth-child(2)").textContent = t.pricing;
+                document.querySelector("nav a:nth-child(3)").textContent = t.about;
+                const boxes = document.querySelectorAll(".menu-box");
+                boxes[0].textContent = t.box1;
+                boxes[1].textContent = t.box2;
+                boxes[2].textContent = t.box3;
+                document.getElementById("box_GS").textContent = t.getStarted;
+                document.getElementById("footer-text").textContent = t.footerBottom;
+            }
+        </script>
+    </body>
+</html>

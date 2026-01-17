@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Links - Pricing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Correct font import -->
+  <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* GLOBAL RESET */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* BODY WITH CORRECT FONT + COLOR */
+    body {
+      font-family: "Sedgwick Ave Display", cursive;
+      font-weight: 400;
+      background-color: #C1E1C1;
+      color: black;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #c1e1c1;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #007BFF;
+    }
+
+    .updatedheader img {
+      height: 30px;
+      width: 100px;
+    }
+
+    .language-switch {
+      border-left: 1px solid #ccc;
+      padding-left: 20px;
+      margin-left: 15px;
+      font-size: 18px;
+    }
+
+    .language-switch a {
+      text-decoration: none;
+      color: black;
+    }
+
+    /* MAIN PRICING */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .pricing-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .plan {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      width: 360px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      color: black;
+    }
+
+    .plan h2 {
+      font-size: 32px;
+      color: black;
+    }
+
+    .price {
+      font-size: 30px;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    .features {
+      margin: 20px 0;
+      text-align: left;
+      font-size: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #234d38;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.3s;
+      font-size: 18px;
+    }
+
+    .btn:hover {
+      background: #1a3628;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #222;
+      color: #eee;
+      padding: 30px 20px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-links {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      color: #bbb;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      font-size: 13px;
+      color: #888;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="updatedheader">
+      <a href="https://links-seg2900.github.io/html-pages/Homepage.html">
+        <img src="https://raw.githubusercontent.com/Links-SEG2900/Links-SEG2900.github.io/refs/heads/main/html-pages/images/logoLinksk.png">
+      </a>
+    </div>
+
+    <nav>
+      <a href="https://links-seg2900.github.io/html-pages/Features_page.html" id="header_features">Features</a>
+      <a href="https://links-seg2900.github.io/html-pages/Pricing_page._version2_.html" id="header_pricing">Pricing</a>
+      <a href="https://links-seg2900.github.io/html-pages/teampage.html" id="header_meetourteam">Meet Our Team</a>
+
+      <div class="language-switch">
+        <a href="#" id="fr-btn">FR</a> |
+        <a href="#" id="en-btn">EN</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <div class="pricing-container">
+      <div class="plan" id="planRegular">
+        <h2 id="regularTitle">Regular</h2>
+        <p class="price" id="regularPrice">Free</p>
+        <div class="features">
+          <p id="regularFeatures1">✔ Discover students</p>
+          <p id="regularFeatures2">✔ Join public groups</p>
+        </div>
+        <a href="#" class="btn" id="btnRegularCTA">Get Started</a>
+      </div>
+
+      <div class="plan" id="planPremium">
+        <h2 id="premiumTitle">Premium</h2>
+        <p class="price" id="premiumPrice">$10 / month</p>
+        <div class="features">
+          <p id="premiumFeatures1">✔ Advanced recommendations</p>
+          <p id="premiumFeatures2">✔ Priority support</p>
+        </div>
+        <a href="#" class="btn" id="btnPremiumCTA">Upgrade</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-bottom" id="footertext">
+      © Links 2025. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- TRANSLATION SCRIPT -->
+  <script>
+    const translations = {
+      en: {
+        regularTitle: "Regular",
+        premiumTitle: "Premium",
+        regularPrice: "Free",
+        premiumPrice: "$10 / month",
+        regularFeatures1: "✔ Discover students",
+        regularFeatures2: "✔ Join public groups",
+        premiumFeatures1: "✔ Advanced recommendations",
+        premiumFeatures2: "✔ Priority support",
+        btnRegularCTA: "Get Started",
+        btnPremiumCTA: "Upgrade",
+        features_header: "Features",
+        features_pricing: "Pricing",
+        features_team: "Meet our Team",
+        footer_text: "© Links 2025. All Rights Reserved."
+      },
+      fr: {
+        regularTitle: "Régulier",
+        premiumTitle: "Premium",
+        regularPrice: "Gratuit",
+        premiumPrice: "$10 / mois",
+        regularFeatures1: "✔ Découvrir des étudiants",
+        regularFeatures2: "✔ Rejoindre des groupes publics",
+        premiumFeatures1: "✔ Recommandations avancées",
+        premiumFeatures2: "✔ Support prioritaire",
+        btnRegularCTA: "Commencer",
+        btnPremiumCTA: "Mettre à niveau",
+        features_header: "Caractéristiques",
+        features_pricing: "Abonnements",
+        features_team: "À propos de nous",
+        footer_text: "© 2025 Links. Tous droits réservés."
+      },
+    };
+
+    document.getElementById("fr-btn").onclick = () => translate("fr");
+    document.getElementById("en-btn").onclick = () => translate("en");
+
+    function translate(lang) {
+      const t = translations[lang];
+      document.getElementById("header_features").textContent = t.features_header;
+      document.getElementById("header_pricing").textContent = t.features_pricing;
+      document.getElementById("header_meetourteam").textContent = t.features_team;
+      document.getElementById("footertext").textContent = t.footer_text;
+
+      document.getElementById("regularTitle").textContent = t.regularTitle;
+      document.getElementById("premiumTitle").textContent = t.premiumTitle;
+      document.getElementById("regularPrice").textContent = t.regularPrice;
+      document.getElementById("premiumPrice").textContent = t.premiumPrice;
+      document.getElementById("regularFeatures1").textContent = t.regularFeatures1;
+      document.getElementById("regularFeatures2").textContent = t.regularFeatures2;
+      document.getElementById("premiumFeatures1").textContent = t.premiumFeatures1;
+      document.getElementById("premiumFeatures2").textContent = t.premiumFeatures2;
+      document.getElementById("btnRegularCTA").textContent = t.btnRegularCTA;
+      document.getElementById("btnPremiumCTA").textContent = t.btnPremiumCTA;
+    }
+  </script>
+
+</body>
+</html>

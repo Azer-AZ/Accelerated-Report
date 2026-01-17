@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Links: Team Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+
+
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: "Sedgwick Ave Display", cursive;
+      font-weight: 400;
+      font-style: normal;
+      background-color: #1e1e1e; 
+      color: black; 
+    }
+
+    header {
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #c1e1c1;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #007BFF;
+    }
+
+    .language-switch {
+      border-left: 1px solid #ccc;
+      padding-left: 20px;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    .language-switch a {
+      margin: 0 5px;
+      color: #666;
+      text-decoration: none;
+    }
+
+    .language-switch a:hover {
+      color: #000;
+    }
+
+     footer {
+      background-color: #222;
+      color: #eee;
+      padding: 30px 20px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-links {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      color: #bbb;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      font-size: 13px;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .language-switch {
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
+      .footer-links a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+
+    .pageinfo {
+        height: 776px;
+        background-color: #c1e1c1;
+
+    }
+    .teamheader {
+      text-align: center;
+      font-size: 48px;
+      padding: 40px 0;
+      color: black;
+      font-family: "Sedgwick Ave Display", cursive;
+    }
+
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      padding: 20px;
+    }
+
+    .profile-box-top {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .pb {
+        height: 200px;
+        width: 200px;
+        display: block;
+        margin: 0 auto;
+        border-radius: 50%;
+        transition: box-shadow 0.3s ease;
+        
+    }
+    .pb img {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        display: block;
+    }
+    .pb img:hover {
+        box-shadow: 0px 0px 25px rgb(224, 228, 10);
+    }
+
+    
+    .updatedheader img{
+        height: 30px;
+        width: 100px;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+     <div class="updatedheader">
+                <a href="https://links-seg2900.github.io/html-pages/Homepage.html" id="headerLink">
+                 <img src="https://raw.githubusercontent.com/Links-SEG2900/Links-SEG2900.github.io/refs/heads/main/html-pages/images/logoLinksk.png">
+                </a>
+        </div>
+    <nav>
+      <a href="https://links-seg2900.github.io/html-pages/Features_page.html" id="header_features">Features</a>
+      <a href="https://links-seg2900.github.io/html-pages/Pricing_page._version2_.html" id="header_pricing">Pricing</a>
+      <a href="https://links-seg2900.github.io/html-pages/teampage.html" id="header_meetourteam">Meet Our Team</a>
+      <div class="language-switch">
+        <a href="#" id="fr-btn">FR</a> | <a href="#" id="en-btn">EN</a>
+      </div>
+    </nav>
+  </header>
+
+    <div class="pageinfo">
+        <div class="teamheader" id="Header">Meet the Team!</div>
+        
+        <br>
+
+        
+        <div class="profile-grid">
+            <div class="profile-box-top">
+                <div class="pb">
+                    <a href="https://www.linkedin.com/in/azer-adam" id="pb1link">
+                     <img src="https://raw.githubusercontent.com/Links-SEG2900/Links-SEG2900.github.io/refs/heads/main/html-pages/images/azer_team.png">
+                    </a>
+                </div>
+                <p> </p>
+                <p id="pb1name">Azer Adam</p>
+                <p id="pb1title">Co-Founder</p>
+            </div>
+
+            <div class="profile-box-top">
+                <div class="pb">
+                    <a href="https://www.linkedin.com/in/inesbouchama-creative-software-engineer/" id="pb2link">
+                     <img src="https://raw.githubusercontent.com/Links-SEG2900/Links-SEG2900.github.io/refs/heads/main/html-pages/images/ines_team.png">
+                    </a>
+                </div>
+                <p id="pb2name">Inès Bouchama</p>
+                <p id="pb2title">Co-Founder</p>
+            </div>
+
+            <div class="profile-box-top">
+                <div class="pb">
+                    <a href="https://www.linkedin.com/in/laurien-michel-8792112ba/" id="pb3link">
+                     <img src="https://raw.githubusercontent.com/Links-SEG2900/Links-SEG2900.github.io/refs/heads/main/html-pages/images/michel_team.png">
+                    </a>
+                </div>
+                <p> </p>
+                <p id="pb3name">Laurien Michel Muhire</p>
+                <p id="pb3title">Co-Founder</p>
+            </div>
+
+            <div class="profile-box-top">
+                <div class="pb">
+                    <a href="https://www.linkedin.com/in/elizabeth-odebowale-75b1b7388/" id="pb4link">
+                     <img src="https://raw.githubusercontent.com/Links-SEG2900/Links-SEG2900.github.io/refs/heads/main/html-pages/images/elizabeth_team.png">
+                    </a>
+                </div>
+                <p> </p>
+                <p id="pb4name">Elizabeth Odebowale</p>
+                <p id="pb4title">Co-Founder</p>
+            </div>
+
+            <div class="profile-box-top">
+                <div class="pb">
+                    <a href="https://www.linkedin.com/in/james-rousseau-2a9209389/" id="pb5link">
+                     <img src="https://raw.githubusercontent.com/Links-SEG2900/Links-SEG2900.github.io/refs/heads/main/html-pages/images/james_team.png">
+                    </a>
+                </div>
+                <p> </p>
+                <p id="pb5name">James Rousseau</p>
+                <p id="pb5title">Co-Founder</p>
+            </div>
+
+            <div class="profile-box-top">
+                <div class="pb">
+                    <a href="https://www.linkedin.com/in/teyou-softftwareingineer/" id="pb6link">
+                     <img src="https://raw.githubusercontent.com/Links-SEG2900/Links-SEG2900.github.io/refs/heads/main/html-pages/images/pierre_team.png">
+                    </a>
+                </div>
+                <p> </p>
+                <p id="pb6name">Pierre Teyou Gaiss</p>
+                <p id="pb6title">Co-Founder</p>
+            </div>
+        </div>
+  
+    </div>
+  <footer>
+    <div class="footer-links">
+    </div>
+    <div class="footer-bottom", id="footertext">
+      &copy; Links 2025. All Rights Reserved.
+    </div>
+  </footer>
+
+
+  <script>
+  const translations = {
+    en: {
+        title: "Meet the Team!",
+        pb1title: "Co-Founder",
+        pb2title: "Co-Founder",
+        pb3title: "Co-Founder",
+        pb4title: "Co-Founder",
+        pb5title: "Co-Founder",
+        pb6title: "Co-Founder",
+        features_header: "Features",
+        features_pricing: "Pricing",
+        features_team: "Meet our Team",
+        footer_text: "© Links 2025. All Rights Reserved."
+
+     
+    },
+    fr: {
+        title: "Recontre l'Équipe!",
+        pb1title: "Co-Fondateur",
+        pb2title: "Co-Fondateur",
+        pb3title: "Co-Fondateur",
+        pb4title: "Co-Fondateur",
+        pb5title: "Co-Fondateur",
+        pb6title: "Co-Fondateur",
+        features_header: "Caractéristiques",
+        features_pricing: "Abonnements",
+        features_team: "À propos de nous",
+        footer_text: "© 2025 Links. Tous droits réservés."
+    }
+  };
+
+  document.getElementById("fr-btn").onclick = function() {
+    translate("fr");
+  };
+
+  document.getElementById("en-btn").onclick = function() {
+    translate("en");
+  };
+
+  function translate(lang) {
+    const t = translations[lang];
+    document.getElementById("Header").textContent = t.title;
+    document.getElementById("pb1title").textContent = t.pb1title;
+    document.getElementById("pb2title").textContent = t.pb2title;
+    document.getElementById("pb3title").textContent = t.pb3title;
+    document.getElementById("pb4title").textContent = t.pb4title;
+    document.getElementById("pb5title").textContent = t.pb5title;
+    document.getElementById("pb6title").textContent = t.pb6title;
+    document.getElementById("header_features").textContent = t.features_header;
+    document.getElementById("header_pricing").textContent = t.features_pricing;
+    document.getElementById("header_meetourteam").textContent = t.features_team;
+    document.getElementById("footertext").textContent = t.footer_text;
+  }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Availability Table</title>
+    <link href="chat_style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Sedgwick+Ave&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: Sedgwick Ave;
+            --pastel-green: #C1E1C1;
+            --dark: black;
+            --text-color: Gold;
+            --simplistic: white;
+
+        }
+
+        header {
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;  
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;   
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #007BFF;
+        }
+
+        .language-switch {
+            border-left: 1px solid #ccc;
+            padding-left: 20px; 
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        .language-switch a {
+            margin: 0 5px;
+            color: #666;
+            text-decoration: none;
+        }
+
+        .language-switch a:hover {
+            color: #000;
+        }
+
+        
+        html,
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        #navbar {
+            display: flex;
+            width: 100vw;
+            height: 55px;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--dark);
+            position: sticky;
+            top: 0;
+            left: 0;
+            border-bottom: 5px solid white;
+        }
+
+        .nav-links {
+            color: var(--simplistic);
+            display: flex;
+            justify-content: space-evenly;
+            width: 150px;
+            text-decoration: none;
+            position: relative;
+            font-size: 20px;
+            border: 2px solid var(--simplistic);
+            padding: 3px 8px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .nav-links:hover {
+            background-color: var(--simplistic);
+            color: var(--dark);
+            cursor: pointer;
+            border: 2px solid var(--dark);
+            padding: 10px;
+        }
+
+        .user-profile-picture {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            position: relative;
+            left: 20px;
+            align-self: center;
+            top: 20px;
+
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        #user-side>* {
+            display: grid;
+            width: 40vw;
+            height: 13vh;
+            border: 1px solid var(--dark);
+            grid-column: 1;
+            position: relative;
+            left: -8px;
+        }
+
+        #messaging-side>* {
+            display: grid;
+            grid-column: 2;
+            width: 64vw;
+
+        }
+
+        .user {
+            height: 10px;
+        }
+
+        .user:hover {
+            background-color: var(--pastel-green);
+            color: var(--simplistic);
+        }
+
+        .username {
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            top: -25px;
+            font-size: 18px;
+
+        }
+
+        .username:hover {
+            color: var(--simplistic);
+            cursor: pointer;
+        }
+
+        .phone-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            position: relative;
+            justify-content: flex-end;
+            top: -70px;
+            left: 80%;
+        }
+
+        .phone-logo:hover {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            top: -80px;
+            cursor: pointer;
+        }
+
+        .user_message_receiver_info {
+            display: inline-block;
+            border-bottom: 1px solid var(--dark);
+            width: 100vh;
+            height: 80px;
+
+
+        }
+
+        .username_receiver {
+            display: flex;
+            justify-content: center;
+            font-size: 18px;
+            align-self: center;
+            position: relative;
+            top: -20px;
+            font-weight: bold;
+        }
+
+        .message_input {
+
+            border-radius: 10px;
+        }
+
+        .text_input {
+            padding: 10px 275px;
+            border: 2px solid var(--dark);
+            border-radius: 10px;
+        }
+
+
+        #text_input_container {
+            position: absolute;
+            top: 700px;
+            display: flex;
+            justify-content: center;
+            left: 540px;
+
+        }
+
+        #send_button {
+            border-radius: 10px;
+            background-color: var(--pastel-green);
+            color: var(--dark);
+            padding: 10px 15px;
+            border: 2px solid var(--dark);
+            font-weight: bold;
+        }
+
+        #send_button:hover {
+            padding: 15px 15px;
+            cursor: pointer;
+            background-color: var(--black);
+            color: var(--white);
+        }
+
+        .column-title {
+            background-color: var(--dark);
+            color: var(--pastel-green);
+            text-align: center;
+
+        }
+
+        footer {
+          background-color: #222;
+          color: #eee;
+          padding: 30px 20px;
+          text-align: center;
+          font-family: Arial, sans-serif;
+        }
+    
+        .footer-links {
+          margin-bottom: 15px;
+        }
+    
+        .footer-links a {
+          color: #bbb;
+          text-decoration: none;
+          margin: 0 15px;
+          font-size: 14px;
+        }
+    
+        .footer-links a:hover {
+          color: #fff;
+          text-decoration: underline;
+        }
+    
+        .footer-bottom {
+          font-size: 13px;
+          color: #888;
+        }
+
+
+        @media (max-width: 600px) {
+            .footer-links a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--Header-->
+<header>
+    <div class="logo-area">
+        <a href="https://links-seg2900.github.io/html-pages/Homepage.html">
+            <img src="https://raw.githubusercontent.com/Links-SEG2900/Links-SEG2900.github.io/refs/heads/main/html-pages/images/logoLinksk.png"
+                 alt="Link logo" style="width:80px; height:30px;">
+        </a>
+    </div>
+
+    <nav>
+        <a href="https://links-seg2900.github.io/html-pages/Homepage.html">Home</a>
+        <a href="https://links-seg2900.github.io/html-pages/User_Page.html">User</a>
+        
+        <a href="https://links-seg2900.github.io/html-pages/Pricing_page._version2_.html">Pricing</a>
+
+        <a href="https://links-seg2900.github.io/html-pages/teampage.html">About</a>
+
+        <div class="language-switch">
+            <a href="#" id="fr-btn">FR</a> |
+            <a href="#" id="en-btn">EN</a>
+        </div>
+    </nav>
+</header>
+    <main>
+        <section id="user-side">
+            <!--Each user-->
+            <div class="column-title">
+                <h2 class="title"><i>Your Links</i></h2>
+
+            </div>
+
+            <div class="user">
+                <img class="user-profile-picture" src="https://cdn-icons-png.flaticon.com/512/9201/9201341.png"
+                    alt="Photo de profile" />
+                <p class="username">Azer Adam</p>
+            </div>
+
+            <div class="user">
+                <img class="user-profile-picture" src="https://static.thenounproject.com/png/3918329-200.png"
+                    alt="Photo de profile" />
+                <p class="username">Elizabeth</p>
+            </div>
+            <div class="user">
+                <img class="user-profile-picture" src="https://static.thenounproject.com/png/3918329-200.png"
+                    alt="Photo de profile" />
+                <p class="username">Laurien</p>
+            </div>
+            <div class="user">
+                <img class="user-profile-picture" src="https://static.thenounproject.com/png/3918329-200.png"
+                    alt="Photo de profile" />
+                <p class="username">Pierre</p>
+            </div>
+            <div class="user">
+                <img class="user-profile-picture" src="https://static.thenounproject.com/png/3918329-200.png"
+                    alt="Photo de profil" />
+                <p class="username">Ines</p>
+            </div>
+            <div class="user">
+                <img class="user-profile-picture" src="https://static.thenounproject.com/png/3918329-200.png"
+                    alt="Photo de profil" />
+                <p class="username">James</p>
+            </div>
+        </section>
+        <section id="messaging-side">
+            <div class="user_message_receiver_info">
+                <img data-receiver class="user-profile-picture"
+                    src="https://cdn-icons-png.flaticon.com/512/9201/9201341.png" alt="Profile picture" />
+                <p class="username_receiver">Azer Adam</p>
+                <img class="phone-logo"
+                    src="https://images.seeklogo.com/logo-png/24/1/phone-logo-png_seeklogo-248712.png"
+                    alt="Phone logo" />
+            </div>
+
+            <div id="text_input_container">
+                <form class="message_input">
+                    <input cols="50" class="text_input" type="text" placeholder="Type your message here..." />
+                    <button id="send_button" type="submit">Send</button>
+                </form>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+    <br>
+    <footer>
+        <div class="footer-bottom">
+            &copy; 2025 Links. Tous droits réservés.
+        </div>
+    </footer>
+</body>
+<script src="script_chat.js"> </script>
+
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Availability Table</title>
+    <link href="user_page.css" rel="stylesheet" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet"/>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Sedgwick Ave Display", cursive;
+            --pastel-green: #C1E1C1;
+            --dark: black;
+            --text-color: Gold;
+            --simplistic: white;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        html {
+            overflow-y: scroll;
+        }
+
+        header {
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .updatedheader img {
+            height: 55px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            transition: 0.3s ease;
+            font-size: 22px;
+        }
+
+        header nav a:hover {
+            color: #007BFF;
+        }
+
+        #user-page {
+            width: 100%;
+            height: 90vh;
+            position: relative;
+
+        }
+
+        .user {
+            display: inline-block;
+            width: 300px;
+            height: 40px;
+            border: 1px solid var(--dark);
+            margin: 10px;
+            padding: 40px;
+            border-radius: 10px;
+            left: 20px;
+            position: relative;
+        }
+
+        .user:hover {
+            background-color: var(--pastel-green);
+            color: var(--dark);
+
+        }
+
+        .user-profile-picture {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            left: -18px;
+            top: -18px;
+            display: flex;
+            align-self: center;
+        }
+
+        .username {
+            display: flex;
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            top: -68px;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #add-user {
+            width: 100px;
+            height: 90px;
+            display: inline-block;
+            border: 1px solid var(--dark);
+            border-radius: 10px;
+            position: relative;
+            top: -67px;
+            left: 20px;
+            background-color: var(--dark);
+            color: var(--simplistic);
+            font-size: 30px;
+        }
+
+        #add-user:hover {
+            background-color: var(--pastel-green);
+            color: var(--simplistic);
+        }
+
+        footer {
+            background-color: #222;
+            color: #eee;
+            padding: 30px 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            font-size: 13px;
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            .footer-links a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--Header-->
+    <header>
+        <div class="updatedheader">
+            <a href="https://links-seg2900.github.io/html-pages/Homepage.html">
+                <img src="https://raw.githubusercontent.com/Links-SEG2900/Links-SEG2900.github.io/refs/heads/main/html-pages/images/logoLinksk.png">
+            </a>
+        </div>
+
+        <nav>
+            <a id="nav-home" href="https://links-seg2900.github.io/html-pages/Homepage.html">Home</a>
+            <a id="nav-user" href="https://links-seg2900.github.io/html-pages/User_Page.html">User</a>
+            <a id="nav-price" href="https://links-seg2900.github.io/html-pages/Pricing_page._version2_.html">Pricing</a>
+            <a id="nav-about" href="https://links-seg2900.github.io/html-pages/teampage.html">About</a>
+            <a href="#" id="fr-btn">FR</a> | <a href="#" id="en-btn">EN</a>
+        </nav>
+    </header>
+
+    <!--User page section-->
+    <section id="user-page">
+        <!--Each user-->
+        <div class="user">
+            <img class="user-profile-picture" src="https://cdn-icons-png.flaticon.com/512/9201/9201341.png"
+                alt="Profile picture" />
+            <p class="username">Azer Adam</p>
+        </div>
+
+        <div class="user">
+            <img class="user-profile-picture" src="https://static.thenounproject.com/png/3918329-200.png"
+                alt="Profile picture" />
+            <p class="username">Elizabeth</p>
+        </div>
+        <div class="user">
+            <img class="user-profile-picture" src="https://static.thenounproject.com/png/3918329-200.png"
+                alt="Profile picture" />
+            <p class="username">Laurien</p>
+        </div>
+        <div class="user">
+            <img class="user-profile-picture" src="https://static.thenounproject.com/png/3918329-200.png"
+                alt="Profile picture" />
+            <p class="username">Pierre</p>
+        </div>
+        <div class="user">
+            <img class="user-profile-picture" src="https://static.thenounproject.com/png/3918329-200.png"
+                alt="Profile picture" />
+            <p class="username">Ines</p>
+        </div>
+        <div class="user">
+            <img class="user-profile-picture" src="https://static.thenounproject.com/png/3918329-200.png"
+                alt="Profile picture" />
+            <p class="username">James</p>
+        </div>
+        <button id="add-user">&#43;</button>
+    </section>
+
+    <footer>
+    <div class="footer-links">
+    </div>
+    <div class="footer-bottom", id="footertext">
+      &copy; Links 2025. All Rights Reserved.
+    </div>
+  </footer>
+
+
+</body>
+<script>
+    const translations = {
+        en: {
+            home: "Home",
+            user: "User",
+            price: "Pricing",
+            about: "About",
+            footerBottom: "© 2025 Links. All Rights Reserved."
+        },
+        fr: {
+            home: "Accueil",
+            user: "Utilisateur",
+            price: "Prix",
+            about: "À propos",
+            footerBottom: "© 2025 Links. Tous droits réservés."
+        }
+    };
+
+    document.getElementById("fr-btn").onclick = () => translate("fr");
+    document.getElementById("en-btn").onclick = () => translate("en");
+
+    function translate(lang) {
+        const t = translations[lang];
+        document.getElementById("nav-home").textContent = t.home;
+        document.getElementById("nav-user").textContent = t.user;
+        document.getElementById("nav-price").textContent = t.price;
+        document.getElementById("nav-about").textContent = t.about;
+        document.querySelector(".footer-bottom").textContent = t.footerBottom;
+    }
+
+    document.querySelectorAll(".user").forEach(user => {
+        user.addEventListener("click", () => {
+            window.location.href = "https://links-seg2900.github.io/html-pages/Chat_Page.html";
+        });
+    });
+</script>
+
+</html>
