@@ -538,15 +538,19 @@ async def create_report(report: ReportCreate):
                 raise HTTPException(status_code=500, detail="Failed to store report")
         
         # Track metric: report submitted successfully
-        sentry_sdk.metrics.incr(
-            "reports.submitted",
-            tags={
-                "type": report.type,
-                "platform": report.platform,
-                "ai_enriched": str(bool(ai_enrichment)),
-                "has_resources": str(bool(helpful_resources)),
-            }
-        )
+        try:
+            from sentry_sdk import metrics
+            metrics.incr(
+                "reports.submitted",
+                tags={
+                    "type": report.type,
+                    "platform": report.platform,
+                    "ai_enriched": str(bool(ai_enrichment)),
+                    "has_resources": str(bool(helpful_resources)),
+                }
+            )
+        except Exception:
+            pass  # Metrics not critical
         
         return ReportResponse(
             report_id=report_id,
@@ -563,6 +567,8 @@ async def create_report(report: ReportCreate):
 async def list_reports():
     """Get all reports"""
     try:
+        import json
+        import traceback
         conn = sqlite3.connect(DB_NAME)
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
@@ -572,26 +578,42 @@ async def list_reports():
         
         reports = []
         for row in rows:
+            # Convert Row to dict for easy access
+            row_dict = dict(row)
+            
+            # Parse JSON fields
+            helpful_resources = None
+            if row_dict.get("helpful_resources"):
+                try:
+                    helpful_resources = json.loads(row_dict["helpful_resources"])
+                except:
+                    pass
+            
             reports.append({
-                "id": row["id"],
-                "created_at": row["created_at"],
-                "type": row["type"],
-                "message": row["message"],
-                "platform": row["platform"],
-                "app_version": row["app_version"],
-                "status": row["status"],
-                "description": row.get("description"),
-                "category": row.get("category"),
-                "severity": row.get("severity"),
-                "developer_action": row.get("developer_action"),
-                "confidence": row.get("confidence"),
-                "similar_reports": row.get("similar_reports"),
+                "id": row_dict["id"],
+                "created_at": row_dict["created_at"],
+                "type": row_dict["type"],
+                "message": row_dict["message"],
+                "platform": row_dict.get("platform"),
+                "app_version": row_dict.get("app_version"),
+                "status": row_dict.get("status"),
+                "description": row_dict.get("description"),
+                "category": row_dict.get("category"),
+                "severity": row_dict.get("severity"),
+                "developer_action": row_dict.get("developer_action"),
+                "confidence": row_dict.get("confidence"),
+                "similar_reports": row_dict.get("similar_reports"),
+                "helpful_resources": helpful_resources,
+                "sentry_event_id": row_dict.get("sentry_event_id"),
             })
         
         return {"reports": reports, "count": len(reports)}
     except Exception as e:
+        import traceback
+        print(f"ERROR in list_reports: {e}")
+        print(traceback.format_exc())
         sentry_sdk.capture_exception(e)
-        raise HTTPException(status_code=500, detail="Failed to retrieve reports")
+        raise HTTPException(status_code=500, detail=f"Failed to retrieve reports: {str(e)}")
 
 
 if __name__ == "__main__":

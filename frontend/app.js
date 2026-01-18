@@ -128,11 +128,22 @@ async function submitReport(reportData, isQuickAction = false) {
 }
 
 // Show/hide AI processing indicator
+let aiStatusTimeout = null;
 function showAIStatus(show) {
     if (aiStatus) {
+        // Clear any existing timeout
+        if (aiStatusTimeout) {
+            clearTimeout(aiStatusTimeout);
+            aiStatusTimeout = null;
+        }
+        
         if (show) {
             aiStatus.classList.remove('hidden');
-            setTimeout(() => aiStatus.classList.add('hidden'), 2000);
+            // Auto-hide after 10 seconds as failsafe
+            aiStatusTimeout = setTimeout(() => {
+                aiStatus.classList.add('hidden');
+                aiStatusTimeout = null;
+            }, 10000);
         } else {
             aiStatus.classList.add('hidden');
         }
