@@ -1,6 +1,6 @@
 INFO:     Will watch for changes in these directories: ['/Users/jingyu/Documents/Sentry/backend']
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [92777] using WatchFiles
+INFO:     Started reloader process [94266] using WatchFiles
 /Users/jingyu/Documents/Sentry/backend/main.py:18: FutureWarning: 
 
 All support for the `google.generativeai` package has ended. It will no longer be receiving 
@@ -10,39 +10,39 @@ See README for more details:
 https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
 
   import google.generativeai as genai
-INFO:     Started server process [92780]
+INFO:     Started server process [94269]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ✅ Gemini AI enabled (with vision)
 ✅ Yellowcake enabled (will fetch helpful resources)
 ✅ Sentry monitoring enabled
-INFO:     127.0.0.1:49624 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49635 - "GET /reports HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49645 - "GET /reports HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49651 - "GET /reports HTTP/1.1" 200 OK
-Gemini AI enrichment failed: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
-INFO:     127.0.0.1:49651 - "POST /reports HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49651 - "GET /reports HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49661 - "GET /screenshots/439bbe9b-24c6-4b16-80be-8c4bcdbe82db.png HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49663 - "GET /screenshots/2dbc9a06-ea27-408a-a849-6c18033dec1e.png HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:49669 - "GET /screenshots/91c06680-6555-4353-a7df-450a89de5508.png HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:49667 - "GET /screenshots/ad1a6659-9b2c-48c7-8626-b3235873bf0e.png HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:49666 - "GET /screenshots/9a011016-b812-44be-a8d0-a9d8c5d8712e.png HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:49684 - "GET /reports HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49694 - "GET /reports HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49700 - "GET /reports HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49703 - "GET /screenshots/2dbc9a06-ea27-408a-a849-6c18033dec1e.png HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:49705 - "GET /screenshots/9a011016-b812-44be-a8d0-a9d8c5d8712e.png HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:49706 - "GET /screenshots/439bbe9b-24c6-4b16-80be-8c4bcdbe82db.png HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:49717 - "GET /reports HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49728 - "GET /reports HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49738 - "GET /reports HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49738 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49769 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49772 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49790 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49795 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49803 - "GET /screenshots/439bbe9b-24c6-4b16-80be-8c4bcdbe82db.png HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49804 - "GET /screenshots/9a011016-b812-44be-a8d0-a9d8c5d8712e.png HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49806 - "GET /screenshots/ad1a6659-9b2c-48c7-8626-b3235873bf0e.png HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49805 - "GET /screenshots/2dbc9a06-ea27-408a-a849-6c18033dec1e.png HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49807 - "GET /screenshots/91c06680-6555-4353-a7df-450a89de5508.png HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49785 - "POST /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49785 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49806 - "GET /screenshots/439bbe9b-24c6-4b16-80be-8c4bcdbe82db.png HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49807 - "GET /screenshots/3d8441b2-679c-4273-85f1-fcd6e128863e.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49820 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49822 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49830 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49835 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49843 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49848 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49854 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49857 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49859 - "GET /reports HTTP/1.1" 200 OK
 WARNING:  WatchFiles detected changes in 'main.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [92780]
+INFO:     Finished server process [94269]
 /Users/jingyu/Documents/Sentry/backend/main.py:18: FutureWarning: 
 
 All support for the `google.generativeai` package has ended. It will no longer be receiving 
@@ -52,10 +52,22 @@ See README for more details:
 https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
 
   import google.generativeai as genai
-INFO:     Started server process [93939]
+INFO:     Started server process [94587]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ✅ Gemini AI enabled (with vision)
 ✅ Yellowcake enabled (will fetch helpful resources)
 ✅ Sentry monitoring enabled
-INFO:     127.0.0.1:49748 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49887 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49887 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49895 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49902 - "GET /screenshots/3d8441b2-679c-4273-85f1-fcd6e128863e.png HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49903 - "GET /screenshots/439bbe9b-24c6-4b16-80be-8c4bcdbe82db.png HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49907 - "GET /screenshots/91c06680-6555-4353-a7df-450a89de5508.png HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49904 - "GET /screenshots/9a011016-b812-44be-a8d0-a9d8c5d8712e.png HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49906 - "GET /screenshots/ad1a6659-9b2c-48c7-8626-b3235873bf0e.png HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49905 - "GET /screenshots/2dbc9a06-ea27-408a-a849-6c18033dec1e.png HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49916 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49916 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49926 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49934 - "GET /reports HTTP/1.1" 200 OK

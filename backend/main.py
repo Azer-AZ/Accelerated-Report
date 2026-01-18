@@ -113,40 +113,73 @@ async def enrich_with_gemini(report_data: dict, screenshot_path: str = None) -> 
             # Prepare content for Gemini
             parts = []
             
-            # Add text prompt
-            prompt = f"""You are an expert bug report analyzer. Analyze this user feedback:
+            # Standardized, formal prompt template
+            prompt = f"""You are a professional software quality assurance analyst providing technical analysis for engineering teams.
 
-REPORT DETAILS:
-- Type: {report_data['type']} (crash/slow/bug/suggestion)
-- User's Message: "{report_data['message']}"
-- Platform: {report_data.get('platform', 'unknown')}"""
+═══════════════════════════════════════════════════════════════
+INCIDENT REPORT ANALYSIS REQUEST
+═══════════════════════════════════════════════════════════════
+
+INPUT DATA:
+• Report Type: {report_data['type'].upper()}
+• User Message: "{report_data['message']}"
+• Platform: {report_data.get('platform', 'unknown').upper()}"""
 
             if screenshot_path:
-                prompt += "\n- Screenshot: Provided (see image)"
+                prompt += "\n• Visual Evidence: Screenshot attached for analysis"
             
             prompt += """
 
-YOUR ANALYSIS TASK:
-1. DESCRIPTION: Write a comprehensive 2-3 sentence summary interpreting what the user experienced. If there's a screenshot, describe what you see and how it relates to the reported issue.
+═══════════════════════════════════════════════════════════════
+ANALYSIS REQUIREMENTS
+═══════════════════════════════════════════════════════════════
 
-2. CATEGORY: Classify into one of: crash/performance/bug/feature_request/ui_issue/network/data_issue
+Please provide a formal, standardized analysis following this exact structure:
 
-3. SEVERITY: Assess impact: critical/high/medium/low
-   - critical: app unusable, data loss, security issue
-   - high: major feature broken, affects many users
-   - medium: feature partially broken, workaround exists
-   - low: minor issue, cosmetic, edge case
+1. DESCRIPTION (Technical Summary)
+   - Write 2-3 professional sentences
+   - Use technical terminology appropriately
+   - If screenshot provided: Reference specific UI elements, error states, or visual indicators
+   - Format: Clear, objective, third-person perspective
+   - Example: "The user has encountered a network connectivity issue while accessing the profile view. The screenshot reveals a timeout error dialog with error code NET::ERR_CONNECTION_TIMED_OUT."
 
-4. DEVELOPER_ACTION: Provide specific actionable steps for the developer (1-2 sentences). If screenshot shows specific UI elements, mention them.
+2. CATEGORY (Classification)
+   - Select ONE from: crash | performance | bug | feature_request | ui_issue | network | data_issue
+   - Use exact lowercase format
 
-5. CONFIDENCE: Your confidence in this analysis (0.0-1.0)
+3. SEVERITY (Impact Assessment)
+   - Select ONE from: critical | high | medium | low
+   - Criteria:
+     * CRITICAL: Complete application failure, data loss, security vulnerability, affects all users
+     * HIGH: Major functionality unavailable, significant user impact, no workaround
+     * MEDIUM: Feature impaired but functional, workaround available, affects subset of users
+     * LOW: Minor inconvenience, cosmetic issue, edge case scenario
 
-Respond in this exact format:
-DESCRIPTION: [your detailed interpretation]
+4. DEVELOPER_ACTION (Remediation Steps)
+   - Provide 1-2 specific, actionable technical recommendations
+   - Reference exact components, functions, or systems if visible in screenshot
+   - Use imperative voice
+   - Format: "Investigate [component]. Verify [condition]. Test [scenario]."
+   - Example: "Investigate API timeout configuration in network layer. Verify connection retry logic. Test behavior under poor network conditions."
+
+5. CONFIDENCE (Analysis Certainty)
+   - Provide numerical score: 0.0 to 1.0
+   - 0.9-1.0: High confidence (clear evidence, definitive issue)
+   - 0.7-0.8: Moderate confidence (probable cause identified)
+   - 0.5-0.6: Low confidence (insufficient information, educated guess)
+   - Below 0.5: Very uncertain (requires additional data)
+
+═══════════════════════════════════════════════════════════════
+OUTPUT FORMAT (MANDATORY)
+═══════════════════════════════════════════════════════════════
+
+DESCRIPTION: [Your technical summary here]
 CATEGORY: [category]
 SEVERITY: [severity]
-DEVELOPER_ACTION: [specific action steps]
-CONFIDENCE: [score]"""
+DEVELOPER_ACTION: [Your actionable recommendations here]
+CONFIDENCE: [0.0-1.0]
+
+Important: Use formal, professional language. Be specific and technical. Reference screenshot details when available."""
 
             parts.append(prompt)
             
