@@ -189,6 +189,25 @@
             height: 30px;
             width: 100px;
         }
+
+        .report-btn {
+  display: block;
+  margin: 40px auto;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.report-btn:hover {
+  background-color: #e74c3c;
+  transform: scale(1.05);
+}
     </style>
 </head>
 
@@ -268,7 +287,7 @@
                 boxes[1].textContent = t.box2;
                 boxes[2].textContent = t.box3;
                 document.getElementById("box_GS").textContent = t.getStarted;
-                document.getElementById("footer-text").textContent = t.footerBottom;
+                document.getElementById("footertext").textContent = t.footerBottom;
             }
         </script>
     <button id="reportBtn">Report an issue</button>
@@ -280,5 +299,6 @@
 </script>
     </body>
 </html>
+
 
 
