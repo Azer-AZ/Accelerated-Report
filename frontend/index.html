@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accelerated Report - Submit Feedback</title>
+    <title>Submit Feedback - Accelerated Report</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
-        <!-- Header -->
+        <!-- Header Section -->
         <header>
-            <h1>⚡ Accelerated Report</h1>
-            <p>Fast, reliable feedback - takes 5 seconds</p>
+            <h1>⚡ Help Us Build Better</h1>
+            <p>Share feedback in 5 seconds - crashes, bugs, slow moments, or great ideas</p>
         </header>
 
-        <!-- Chaos Mode Toggle -->
+        <!-- Developer Settings (Test Mode) -->
         <div class="chaos-toggle">
             <label class="switch">
                 <input type="checkbox" id="chaosMode">
                 <span class="slider"></span>
             </label>
-            <span>Chaos Mode (simulate failures)</span>
+            <span>🧪 Test Mode (simulate errors for testing)</span>
         </div>
 
-        <!-- Quick Feedback Buttons -->
+        <!-- Quick Feedback Section -->
         <div class="card">
-            <h2>Quick Feedback</h2>
-            <p class="subtitle">One tap - we'll handle the details</p>
+            <h2>📢 What's on your mind?</h2>
+            <p class="subtitle">Tap one button - we'll capture screenshots and context automatically</p>
 
+            <!-- Quick Report Buttons -->
             <div class="quick-actions">
                 <button class="quick-btn quick-crash" data-type="crash" data-message="App crashed unexpectedly">
                     🔴 App Crashed
@@ -39,82 +42,79 @@
                     🐛 Found a Bug
                 </button>
                 <button class="quick-btn quick-suggestion" data-type="suggestion" data-message="I have a suggestion">
-                    💡 Suggestion
+                    💡 Great Idea
                 </button>
             </div>
 
-            <!-- Quick Context (Always visible) -->
+            <!-- Context Section -->
             <div class="quick-context">
                 <div class="form-group">
-                    <label for="quickDescription">📝 Quick note for developers (optional)</label>
-                    <textarea 
-                        id="quickDescription" 
-                        rows="2" 
-                        placeholder="e.g., 'Happened when I clicked Save'"
-                    ></textarea>
+                    <label for="quickDescription">💬 Add a quick note (optional)</label>
+                    <textarea id="quickDescription" rows="2"
+                        placeholder="What happened? e.g., 'Crashed when I clicked Save'"></textarea>
                 </div>
-                
+
                 <div class="form-group" style="font-size: 0.85rem; color: #6b7280;">
-                    <label for="screenshot">📸 Screenshot (auto-captured, or upload manually)</label>
-                    <input type="file" id="screenshot" accept="image/*" capture="environment" style="font-size: 0.85rem;">
+                    <label for="screenshot">📸 Attach a screenshot (helps us debug faster)</label>
+                    <input type="file" id="screenshot" accept="image/*" capture="environment"
+                        style="font-size: 0.85rem;">
                     <div id="screenshotPreview" class="screenshot-preview hidden"></div>
                 </div>
             </div>
 
+            <!-- Divider -->
             <div class="divider">
-                <span>or</span>
+                <span>or tell us more</span>
             </div>
 
-            <!-- Detailed Form (Collapsed by default) -->
+            <!-- Detailed Form (Optional) -->
             <details class="detailed-form">
                 <summary>📝 Add more details (optional)</summary>
                 <form id="reportForm">
                     <div class="form-group">
-                        <label for="reportType">Issue Type</label>
+                        <label for="reportType">What type of issue is this?</label>
                         <select id="reportType" required>
-                            <option value="crash">🔴 App Crash</option>
-                            <option value="slow">🟡 Slow Performance</option>
-                            <option value="bug">🐛 Bug / Error</option>
-                            <option value="suggestion">💡 Suggestion</option>
+                            <option value="crash">🔴 App Crash - the app stopped working</option>
+                            <option value="slow">🟡 Slow Performance - everything feels sluggish</option>
+                            <option value="bug">🐛 Bug - something isn't working as expected</option>
+                            <option value="suggestion">💡 Suggestion - I have an idea</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="message">What happened?</label>
-                        <textarea 
-                            id="message" 
-                            rows="3" 
-                            placeholder="Optional - add context..."
-                        ></textarea>
+                        <label for="message">Tell us what happened</label>
+                        <textarea id="message" rows="3"
+                            placeholder="Give us the details - step by step is helpful..."></textarea>
                     </div>
 
                     <button type="submit" id="submitBtn" class="btn-primary">
-                        Send Detailed Report
+                        📤 Submit Report
                     </button>
                 </form>
             </details>
 
-            <!-- Status Messages -->
+            <!-- Feedback Messages -->
             <div id="statusMessage" class="status-message hidden"></div>
 
-            <!-- Queue Status -->
+            <!-- Queue Indicator -->
             <div id="queueStatus" class="queue-status hidden">
-                <span class="queue-badge">⏳ <span id="queueCount">0</span> queued</span>
+                <span class="queue-badge">⏳ <span id="queueCount">0</span> reports queued</span>
             </div>
         </div>
 
-        <!-- Developer Dashboard Link -->
+        <!-- Navigation Section -->
         <div class="dashboard-link">
-            <a href="dashboard.html">View Developer Dashboard →</a>
+            <a href="dashboard.html">📊 View all reports →</a>
         </div>
 
-        <!-- Recent Submissions -->
+        <!-- Recent Activity -->
         <div class="card recent-submissions">
-            <h3>Recent Submissions</h3>
+            <h3>📋 Recently Submitted</h3>
             <div id="recentList"></div>
         </div>
     </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>
